@@ -43,7 +43,7 @@ jobs:
           # Path to the Dockerfile
           file: ./src/Dockerfile
           push: true
-          tags:
+          tags: |
             asergio68/api-produto:latest
             asergio68/api-produto:v${{github.run_number}}
       
