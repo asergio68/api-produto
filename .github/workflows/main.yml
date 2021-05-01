@@ -45,5 +45,5 @@ jobs:
           push: true
           tags:
             asergio68/api-produto:latest
-            asergio68/api-produto:${{github.run_number}}
+            asergio68/api-produto:v${{github.run_number}}
       
