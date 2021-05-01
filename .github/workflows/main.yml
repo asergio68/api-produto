@@ -33,7 +33,7 @@ jobs:
           tags: |
             asergio68/api-produto:latest
             asergio68/api-produto:v${{github.run_number}}
-  CI:
+  CD:
     runs-on: ubuntu-latest
     needs: [CI]
     steps:
