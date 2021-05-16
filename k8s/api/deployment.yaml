@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: api
 spec:
-  replicas: 5
+  replicas: 8
   selector:
     matchLabels:
       app: api
@@ -24,6 +24,22 @@ spec:
         env:
         - name: MONGODB_URI
           value: mongodb://mongouser:mongopwd@mongodb-service:27017/admin
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "100m"
+          limits:
+            memory: "128Mi"
+            cpu: "200m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8080
+          initialDelaySeconds: 5
+          periodSeconds: 3
+          timeoutSeconds: 1
+          successThreshold: 1
+          failureThreshold: 2
 
 ---
 
