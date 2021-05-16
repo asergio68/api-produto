@@ -40,6 +40,15 @@ spec:
           timeoutSeconds: 1
           successThreshold: 1
           failureThreshold: 2
+        readiness:
+          httpGet:
+            path: /read
+            port: 8080
+          initialDelaySeconds: 5
+          periodSeconds: 3
+          timeoutSeconds: 1
+          successThreshold: 1
+          failureThreshold: 2
 
 ---
 
