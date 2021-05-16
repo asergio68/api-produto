@@ -40,7 +40,7 @@ spec:
           timeoutSeconds: 1
           successThreshold: 1
           failureThreshold: 2
-        readiness:
+        readinessProbe:
           httpGet:
             path: /read
             port: 8080
